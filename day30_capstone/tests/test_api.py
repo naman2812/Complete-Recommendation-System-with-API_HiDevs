@@ -4,8 +4,8 @@ from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
 
 from api.app import app
-from data.database import Base, get_db
-from data.repositories import UserRepository, ContentRepository
+from database.database import Base, get_db
+from database.repositories import UserRepository, ContentRepository
 
 # Test DB Setup
 SQLALCHEMY_DATABASE_URL = "sqlite:///./test_db_api.db"

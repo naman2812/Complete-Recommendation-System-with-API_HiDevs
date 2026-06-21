@@ -3,8 +3,8 @@ import os
 import random
 sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
-from data.database import SessionLocal
-from data.models import User, Content, Interaction
+from database.database import SessionLocal
+from database.models import User, Content, Interaction
 from engine.orchestrator import RecommendationOrchestrator
 from engine.evaluator import RecommendationEvaluator
 

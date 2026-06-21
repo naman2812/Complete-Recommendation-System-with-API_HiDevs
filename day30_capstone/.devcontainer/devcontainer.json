@@ -1,0 +1,29 @@
+{
+  "name": "Recommendation System Capstone",
+  "image": "mcr.microsoft.com/devcontainers/python:1-3.11-bullseye",
+  "features": {
+    "ghcr.io/devcontainers/features/sqlite:1": {}
+  },
+  "customizations": {
+    "vscode": {
+      "settings": {
+        "python.defaultInterpreterPath": "/usr/local/bin/python",
+        "python.formatting.provider": "black"
+      },
+      "extensions": [
+        "ms-python.python",
+        "ms-python.vscode-pylance",
+        "humao.rest-client",
+        "rangav.vscode-thunder-client"
+      ]
+    }
+  },
+  "postCreateCommand": "pip install -r requirements.txt && python scripts/seed_data.py",
+  "forwardPorts": [8000],
+  "portsAttributes": {
+    "8000": {
+      "label": "FastAPI Server",
+      "onAutoForward": "notify"
+    }
+  }
+}

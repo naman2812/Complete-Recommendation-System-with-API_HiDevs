@@ -2,8 +2,8 @@ import pytest
 from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
 
-from data.database import Base
-from data.repositories import UserRepository, ContentRepository, InteractionRepository
+from database.database import Base
+from database.repositories import UserRepository, ContentRepository, InteractionRepository
 from engine.orchestrator import RecommendationOrchestrator
 
 # Test database setup

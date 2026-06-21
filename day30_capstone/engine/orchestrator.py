@@ -2,7 +2,7 @@ import time
 from sqlalchemy.orm import Session
 from typing import List, Dict, Any
 
-from data.repositories import UserRepository, ContentRepository, InteractionRepository
+from database.repositories import UserRepository, ContentRepository, InteractionRepository
 from engine.candidate_gen import CandidateGenerator
 from engine.scorer import RecommendationScorer
 from engine.similarity import SimilarityCalculator

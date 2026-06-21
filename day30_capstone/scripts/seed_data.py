@@ -3,8 +3,8 @@ import os
 import random
 sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
-from data.database import SessionLocal, Base, engine
-from data.models import User, Content, Skill, UserSkill, ContentSkill, Interaction
+from database.database import SessionLocal, Base, engine
+from database.models import User, Content, Skill, UserSkill, ContentSkill, Interaction
 
 def seed():
     # Recreate tables

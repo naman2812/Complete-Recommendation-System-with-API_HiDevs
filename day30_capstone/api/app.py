@@ -8,9 +8,9 @@ from fastapi.security.api_key import APIKeyHeader
 from pydantic import BaseModel
 from sqlalchemy.orm import Session
 
-from data.database import engine, Base, get_db
+from database.database import engine, Base, get_db
 from engine.orchestrator import RecommendationOrchestrator
-from data.repositories import UserRepository
+from database.repositories import UserRepository
 
 # Setup logging
 logging.basicConfig(

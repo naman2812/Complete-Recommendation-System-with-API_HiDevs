@@ -2,9 +2,9 @@ import pytest
 from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
 
-from data.database import Base
-from data.models import User, Content, Skill
-from data.repositories import UserRepository, ContentRepository, SkillRepository
+from database.database import Base
+from database.models import User, Content, Skill
+from database.repositories import UserRepository, ContentRepository, SkillRepository
 
 # Test database setup
 SQLALCHEMY_DATABASE_URL = "sqlite:///./test_db.db"
