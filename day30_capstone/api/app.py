@@ -26,7 +26,7 @@ Base.metadata.create_all(bind=engine)
 app = FastAPI(title="Recommendation System API (Enterprise Edition)", version="2.0.0")
 
 # Security
-API_KEY = "dev-secret-key-123"
+API_KEY = "capstone-auth-key-2026"
 API_KEY_NAME = "X-API-Key"
 api_key_header = APIKeyHeader(name=API_KEY_NAME, auto_error=False)
 

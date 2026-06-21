@@ -25,7 +25,7 @@ app.dependency_overrides[get_db] = override_get_db
 
 client = TestClient(app)
 
-HEADERS = {"X-API-Key": "dev-secret-key-123"}
+HEADERS = {"X-API-Key": "capstone-auth-key-2026"}
 
 @pytest.fixture(autouse=True)
 def setup_db():

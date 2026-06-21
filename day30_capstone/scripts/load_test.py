@@ -4,7 +4,7 @@ import concurrent.futures
 
 API_URL = "http://127.0.0.1:8000"
 
-HEADERS = {"X-API-Key": "dev-secret-key-123"}
+HEADERS = {"X-API-Key": "capstone-auth-key-2026"}
 
 def simulate_user(user_id):
     start_time = time.time()
