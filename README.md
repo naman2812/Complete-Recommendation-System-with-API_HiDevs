@@ -1,4 +1,4 @@
-# Day 30 Capstone: Complete Recommendation System
+# Capstone Project: Complete Recommendation System
 
 This project is a production-ready recommendation system microservice. It wraps the Day 29 recommendation components in a FastAPI application, backed by a SQLite database with SQLAlchemy ORM.
 
