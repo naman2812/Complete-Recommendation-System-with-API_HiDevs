@@ -3,7 +3,7 @@
 This project is a production-ready recommendation system microservice. It wraps a robust hybrid recommendation engine in an asynchronous FastAPI application, backed by a SQLite database with SQLAlchemy ORM.
 
 ## 🎥 Project Demo Video
-**[https://youtu.be/PTUskvTNbCw]** 
+**[https://youtu.be/PTUskvTNbCw]** *(Replace this with your actual YouTube link)*
 
 ---
 
@@ -56,6 +56,17 @@ erDiagram
     USERS ||--o{ INTERACTIONS : performs
     CONTENT ||--o{ INTERACTIONS : receives
 ```
+
+---
+
+## 🔒 Production Readiness & CI/CD
+
+This application is built with strict enterprise production standards in mind:
+
+*   **Automated CI/CD Pipeline:** Integrated **GitHub Actions** (`.github/workflows/test.yml`) that automatically installs dependencies, runs PEP8 Linters (`flake8`), and executes the Pytest suite on every push.
+*   **Environment Security:** No hardcoded secrets. All sensitive keys are loaded dynamically via `python-dotenv` from a `.env` file (see `.env.example`).
+*   **CORS Middleware:** Fully configured `CORSMiddleware` in FastAPI to allow secure cross-origin resource sharing from front-end applications.
+*   **PEP8 Formatting:** The entire codebase is strictly formatted using `black` and passes `flake8` linting with 0 errors.
 
 ---
 
