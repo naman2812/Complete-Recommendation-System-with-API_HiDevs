@@ -4,3 +4,7 @@ sqlalchemy
 pytest
 httpx
 requests
+python-dotenv
+pytest-cov
+flake8
+black

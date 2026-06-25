@@ -8,8 +8,11 @@ from database.repositories import UserRepository, ContentRepository, SkillReposi
 
 # Test database setup
 SQLALCHEMY_DATABASE_URL = "sqlite:///./test_db.db"
-engine = create_engine(SQLALCHEMY_DATABASE_URL, connect_args={"check_same_thread": False})
+engine = create_engine(
+    SQLALCHEMY_DATABASE_URL, connect_args={"check_same_thread": False}
+)
 TestingSessionLocal = sessionmaker(autocommit=False, autoflush=False, bind=engine)
+
 
 @pytest.fixture(scope="function")
 def db():
@@ -21,17 +24,22 @@ def db():
         db.close()
         Base.metadata.drop_all(bind=engine)
 
+
 def test_create_user(db):
     user_repo = UserRepository(db)
     user = user_repo.create_user(name="Test User", interests="testing")
     assert user.id is not None
     assert user.name == "Test User"
-    
+
+
 def test_create_content(db):
     content_repo = ContentRepository(db)
-    content = content_repo.create_content(title="Test Content", category="Testing", difficulty="Beginner")
+    content = content_repo.create_content(
+        title="Test Content", category="Testing", difficulty="Beginner"
+    )
     assert content.id is not None
     assert content.title == "Test Content"
+
 
 def test_create_skill(db):
     skill_repo = SkillRepository(db)

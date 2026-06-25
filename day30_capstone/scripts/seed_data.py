@@ -1,10 +1,12 @@
 import sys
 import os
 import random
+
 sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
 from database.database import SessionLocal, Base, engine
 from database.models import User, Content, Skill, UserSkill, ContentSkill, Interaction
+
 
 def seed():
     # Recreate tables
@@ -12,9 +14,18 @@ def seed():
     Base.metadata.create_all(bind=engine)
 
     db = SessionLocal()
-    
+
     # Create Skills
-    skills = ["Python", "Data Science", "Machine Learning", "FastAPI", "SQL", "Deep Learning", "React", "Docker"]
+    skills = [
+        "Python",
+        "Data Science",
+        "Machine Learning",
+        "FastAPI",
+        "SQL",
+        "Deep Learning",
+        "React",
+        "Docker",
+    ]
     db_skills = []
     for s in skills:
         skill = Skill(name=s)
@@ -23,7 +34,20 @@ def seed():
     db.commit()
 
     # Create Users
-    user_names = ["Alice", "Bob", "Charlie", "Diana", "Eve", "Frank", "Grace", "Heidi", "Ivan", "Judy", "Karl", "Leo"]
+    user_names = [
+        "Alice",
+        "Bob",
+        "Charlie",
+        "Diana",
+        "Eve",
+        "Frank",
+        "Grace",
+        "Heidi",
+        "Ivan",
+        "Judy",
+        "Karl",
+        "Leo",
+    ]
     db_users = []
     for name in user_names:
         user = User(name=name, interests="coding,reading")
@@ -52,9 +76,9 @@ def seed():
         ("Data Visualization", "Data", "Beginner", 82.0),
         ("Pandas Mastery", "Data", "Intermediate", 77.0),
         ("Graph Databases", "Database", "Advanced", 35.0),
-        ("Kubernetes Intro", "DevOps", "Advanced", 48.0)
+        ("Kubernetes Intro", "DevOps", "Advanced", 48.0),
     ]
-    
+
     db_content = []
     for c in content_data:
         content = Content(title=c[0], category=c[1], difficulty=c[2], popularity=c[3])
@@ -85,12 +109,13 @@ def seed():
         c = random.choice(db_content)
         t = random.choice(types)
         r = random.uniform(1, 5) if t == "rating" else None
-        
+
         interaction = Interaction(user_id=u.id, content_id=c.id, type=t, rating=r)
         db.add(interaction)
-    
+
     db.commit()
     print("Database seeded successfully with users, content, and interactions.")
+
 
 if __name__ == "__main__":
     seed()
